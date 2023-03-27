@@ -38,11 +38,10 @@ in stdenv.mkDerivation rec {
     curl
     hdf5
     libxml2
-    mpi
     bzip2
     libzip
     zstd
-  ] ++ lib.optional szipSupport szip;
+  ] ++ lib.optional szipSupport szip ++ lib.optional mpiSupport mpi;
 
   passthru = {
     inherit mpiSupport mpi;
